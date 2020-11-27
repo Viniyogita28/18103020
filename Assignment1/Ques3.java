@@ -31,8 +31,10 @@ public class Ques3{
         for (int s= 1; s <= v;s++){
             for (int d = 1; d <= v; d++){
                 if (adjacency_matrix[s][d] != Integer.MAX_VALUE){
-                    if (paths[d] > paths[s] + adjacency_matrix[s][d])
+                    if (paths[d] > paths[s] + adjacency_matrix[s][d]){
                         System.out.println("The Graph contains negative edge cycle");
+			return;
+		    }
                 }
             }
         }
