@@ -3,15 +3,6 @@ import java.util.Scanner;
 
 public class Ques1 {
     
-    private boolean substring_found(String str, String substr, int idx){
-        
-        for(int i=0;i<substr.length();i++){
-            if(str.toCharArray()[i+idx]!=substr.toCharArray()[i]){
-                return false;
-            }
-        }
-        return true;
-    }
     
     private boolean check_match(int[] char_array, int[] substr_array){
         for(int i=0;i<26;i++){
@@ -31,40 +22,31 @@ public class Ques1 {
         
         int count=0;
         
-        if(subStr.length()<26){
-            for(int i=0; i<str.length(); i++){
             
-                if(substring_found(str,subStr,i)){
-                    count++;
-                }
-            }
+        int[] substr_array = new int[26];
+            
+        for(int i=0;i<subStr.length();i++){
+            substr_array[subStr.charAt(i)-'a']++;
         }
-        else{
             
-            int[] substr_array = new int[26];
+        int[] char_array = new int[26];
             
-            for(int i=0;i<subStr.length();i++){
-                substr_array[subStr.charAt(i)-'a']++;
-            }
+        for(int i=0;i<subStr.length();i++){
+            char_array[str.charAt(i)-'a']++;    
+        }
             
-            int[] char_array = new int[26];
+        if(check_match(char_array,substr_array)){
+            count++;
+        }
             
-            for(int i=0;i<subStr.length();i++){
-                char_array[str.charAt(i)-'a']++;    
-            }
-            
+        for(int i=subStr.length();i<str.length();i++){
+            char_array[str.charAt(i)-'a']++;
+            char_array[str.charAt(i-subStr.length())-'a']--;
             if(check_match(char_array,substr_array)){
                 count++;
             }
-            
-            for(int i=subStr.length();i<str.length();i++){
-                char_array[str.charAt(i)-'a']++;
-                char_array[str.charAt(i-subStr.length())-'a']--;
-                if(check_match(char_array,substr_array)){
-                    count++;
-                }
-            }
         }
+    
         
         return count;
     }
