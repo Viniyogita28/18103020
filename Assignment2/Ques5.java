@@ -96,7 +96,7 @@ public class Ques5{
         System.out.println("Time for union with arrays: " + duration1);
 
         startTime = System.nanoTime();
-        Set<Integer> union_s = new HashSet<Integer>(a);
+        Set<Integer> union_s = new HashSet<Integer>(s1);
         union_s.addAll(s2);
         System.out.print("\nUnion of a and b using sets: ");
         System.out.println(union);
@@ -138,10 +138,10 @@ public class Ques5{
         System.out.println("Time for intersection with arrays: " + duration1);
 
         startTime = System.nanoTime();
-        Set<Integer> intersection_s = new HashSet<Integer>(a);
-        union_s.retainAll(s2);
+        Set<Integer> intersection_s = new HashSet<Integer>(s1);
+        intersection_s.retainAll(s2);
         System.out.print("\nIntersection of a and b using sets: ");
-        System.out.println(intersection);
+        System.out.println(intersection_s);
         duration2 = System.nanoTime() - startTime;
         System.out.println("Time for intersection with sets: " + duration2);
 
