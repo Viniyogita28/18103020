@@ -30,16 +30,16 @@ public class Question2 extends Thread {
 	}
 
 	public static void main(String[] args) {
-		q2 th1 = new Question2(1);
-		q2 th2 = new Question2(10001);
-		q2 th3 = new Question2(20001);
-		q2 th4 = new Question2(30001);
-		q2 th5 = new Question2(40001);
-		q2 th6 = new Question2(50001);
-		q2 th7 = new Question2(60001);
-		q2 th8 = new Question2(70001);
-		q2 th9 = new Question2(80001);
-		q2 th10 = new Question2(90001);
+		Question2 th1 = new Question2(1);
+		Question2 th2 = new Question2(10001);
+		Question2 th3 = new Question2(20001);
+		Question2 th4 = new Question2(30001);
+		Question2 th5 = new Question2(40001);
+		Question2 th6 = new Question2(50001);
+		Question2 th7 = new Question2(60001);
+		Question2 th8 = new Question2(70001);
+		Question2 th9 = new Question2(80001);
+		Question2 th10 = new Question2(90001);
 
 		long st = System.currentTimeMillis();
 
